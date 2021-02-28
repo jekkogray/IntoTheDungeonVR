@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Enemy Bullet
+  - Player Bullet
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -13,12 +17,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grab
+  - Ground
+  - UI
+  - Targets
+  - Player
+  - Post Processing
   - 
   - 
   - 

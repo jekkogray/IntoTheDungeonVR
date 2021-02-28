@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Debugging/Dungeon Map 1.unity
+    guid: ac954990e6902bf40b579667eb48da60
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Tutorial.unity
+    guid: 53fb785583f256045b053e05bb04ea82
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Level 1.unity
+    guid: eaa4e5c6d24dcdf4488f1d994073d980
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Level 2.unity
+    guid: c62f4a05f6f838a4c9e5948ef90d310e
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Level 3.unity
+    guid: 8f522800146f19a40843c58f19ddb140
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Scenes/Level 4.unity
+    guid: a5afc4f0f22780f43bcf0189550cb1db
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
