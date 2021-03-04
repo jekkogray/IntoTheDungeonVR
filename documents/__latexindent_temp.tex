@@ -3,18 +3,7 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{gensymb}
 \usepackage{fancyhdr}
-\fancyhead{}
-\fancyhead[RO,LE]{Into The Dungeon}
 \usepackage{setspace}
-\usepackage{listings}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=black,      
-    urlcolor=black,
-}
-
 \pagestyle{fancy}
 \doublespace
 
@@ -50,15 +39,15 @@ count in the game to show off their friends. It is also important to notice that
 this game does not require the user to finish each level as they have the option
 of skipping to the next level if they would like. Therefore, it is a "finish your
 game at your own phase" and the score is dependent on the play time of the user.
-\newpage
 
+\newpage
 \section{VR Application Design}
 One of the most important key design decision when designing this game was
 balancing between physical engagement and motion sickness prevention. \par 
 
 Balancing is most notable in the exclusion of weapons that require physical
 contact with the enemies i.e. swords, hammers etc. This decision was important
-as too much physical engagement such as swinging the sword could disorient users
+as to much physical engagement such as swinging the sword could disorient users
 by having them move and swing at the same time. This can make users
 uncomfortable and also would require more space to work around in the game.\par
 
@@ -75,6 +64,7 @@ loading their weapons which would make this game less arcade feeling.\par
 The map design simplicity was also reduced greatly. Instead of moving around the
 map so much, the level was simplified to prevent users from getting lost in the
 game.
+\newpage
 \section{Integration}
 For the build-process, I primarily worked with C\# Unity and Blender as the tool
 for modeling my enemies and level design. The weapons in the game was provided
@@ -92,6 +82,7 @@ creation and baking of textures was also handled through Blender.  In turn these
 were imported through Unity as an asset in which each enemy object has an enemy
 script attached to them to handle their behavior.
 
+\newpage
 \section{User Experience}
 \emph{Into the Dungeon} has many design considerations to allow for a relaxed
 user experience. In this section we talk about the design decisions that make
@@ -135,121 +126,42 @@ more muted sound, enemies shot closer will sound closer. This rule applies to
 all elements in the game to further enhance the presence of enemies in the
 game.\par 
 
-Levels also has background music that is playing throughout the game.
-Furthermore, when a player finishes a level, a sound cue is played to indicate
-to the player that level is done and will be moving to the next level.
+While enemy sound is present, the levels also has background music that is
+playing throughout the game. Furthermore, when a player finishes a level, a
+sound cue is played to indicate to the player that level is done and will be
+moving to the next level.
 
 \subsection{Text Instructional}
-In the starting room the user will be given a tutorial on how to move about the
-room i.e. how to use the teleportation. Additionally in the beginning room the
-user will be provided with instructions on how to use the weapons by
-initializing UI elements that indicates what everything is. Whenever the user
-enters a new room an instruction on how to use that weapon will appear. Once the
-user has read and tested the item the user can then proceed to walk forward to
-engage the enemies which they can immediately notice. 
+In the starting room the user will be given a tutorial on how to move about the
+room i.e. how to use the teleporation. Additionally in the beginning room the
+user will be provided with instructions on how to use the weapons by initializing UI elements that indicates what everythings is. Whenever the
+user enters a new room an instruction on how to use that weapon will appear.
+Once the user has read and tested the item the user can then proceed to walk forward to engage the enemies which they can immedietly notice. 
 
 \subsection{Instructional Signs/Wayfinders}
-Each room contains an instruction on how to use the weapons as well as how to
+Each room contain an instruction on how to use the weapons as well as how to
 move to the next room as the user is spawned in front of the instructions.
 
 \subsection{Six Degrees of Freedom}
 \emph{Six Degrees of Freedom (DOF)} is present in the game. This design decision
 was an important implementation as moving with guns around the game would be a
 lot harder if the user does not have full control of their weapons.
+\newpage
 
 \section{User Guideline}
 
 \subsection{Windows Installation}
-To use the game for Windows. Extract the \emph{Windows Build V 1.2.7z} to their
-desired location using \textbf{\href{https://www.7-zip.org/download.html}{7zip}}.
-Assuming the user has already installed the necessary drivers to connect their
-VR to a PC. Simply execute the file \emph{Into The Dungeon VR.exe} located in
-the Windows build folder. There are no further installations needed as the
-application is built.
-\subsection{Android Installation}
-To use the game for Android, make sure that the user is in Developer mode and
-install the oculus ADB driver on their PC.
-
-\textbf{\href{https://developer.oculus.com/downloads/package/oculus-go-adb-drivers/}{Oculus}}.
-Once the user has downlaoded this, using the command prompt or terminal
-\emph{cd} to the location of the adb and run the following:j
-\begin{lstlisting}{language=Bash}
-adb install -r C:\Users\YourName\Downloads\MyCoolNewApp.apk
-\end{lstlisting}
-On their device, users can then navigate to the app library and go to unknown
-sources to play use the application. The game will proceed to placing you in a
-tutorial setting where you can view the controls. For best experience use the
-teleportation (left trigger)
+To use the game for Windows. Extract the \emph{Windows Build V 1.2.7z} to their desired location using 7zip. Assuming the user has already installed the
+necessary drivers to connect their VR to a pc. Simply execute the file \emph{Into The
+Dungeon VR.exe} located in the Windows build folder. There are no further installations needed as the applications is built.
 \section{Conclusion}
-Considering the initial design works what work was the room to room dynamics of
-the game. However, the physical movement from one room to another was removed to
-prevent the user from getting lost. However, I do believe implementing UI
-room navigation was a lot more effective that indoors. However, what did not work
-was implementing swords and such as since it was a lot more complicated to
-implement physical damage through user collisions. What does need work is the
-level design, as I focused more on reducing unnecessary movements this also
-dumb down the levels in the game.
-\section{Suggestions for Further Improvements}
-To improve the game even more, perhaps the introduction of more complicated map
-designs could make the game more engaging and increase the repeatability factor
-of the game. Also including more weapons in the game can increase the difficult
-as well as being able to carry multiple weapons can be helpful for the user. To
-enhance the experience it would be helpful to optimize the models even further
-to be compatible with the Oculus Quest unlinked. This application runs smoothly
-connected to a PC.
-\newpage
+\section{Suggestions for Further Improvements}
+
 \appendix
 \section{Lessons Learned}
-In designing this VR application my vision for what I want was pretty clear and
-achievable, however some complexities had to be cut down due to time
-constraints. The biggest challenge I faced was implementing enemy AI behaviour,
-collisions, and user movements. \par 
-
-AI behavior was certainly one of the biggest hurdles trying to implement in the
-game. As the enemy does not only move in 2D but have to compensate for 3D ray
-casting from the user in different direction. One of the struggles I initially
-had was calculating the path way for the enemy to go in the event of an obstacle
-in the way. This was however solved using NavMeshAgent that is built in Unity.
-This allowed me to implement enemies without having the need to calculate if the
-next step is possible as the component calculates the next possible step to the
-destination. Within this script I was also able to implement different states
-for the enemy with the following: Patrol, Chase, Attack. This was also a
-struggle to implement as it was hard to calculate the threshold of when the
-patrol, chase and attack occurs. However, I found that 20, 10, and 5 to be the
-best spot for attacking.\par
-
-The next struggle in the game was calculating the Collision and when it should
-happen. I discovered that the method \emph{OnCollisionEnter(Collision)} and
-\emph{OnCollisionStay(Collision)} were two different things. When calculating
-enemy damage I used on \emph{OnCollisionEnter(Collision)} as using the alter
-would keep decreasing my health when a projectile collided with the player
-especially if the projectile had a slower velocity. This was the main reason I
-excluded using swords in the game as I did not know when the damage should keep
-inflicting or when an enemy actually attack the enemy opposed to having the
-sword just touching the enemy.\par
-
-User movement was a struggle however, when I found out about \emph{XR
-Interaction Toolkit} the implementation was simplified. Once the rig was setup
-it was primarily implementing the behavior of weapon objects and applying
-scripts to them that correspond to user button press such as the shoot button. 
-
 \section{Feedback to the Instructor}
-For the VR Dev platform, it was very helpful to use Unity with C\# as the
-learning was transferrable to other game developments that use the same
-platform. The grouping is pretty helpful, however I think it would be helpful to
-have at least one demo of a feature or code in class to help the class get
-started. For example, showing a simple instruction as to how to grab an object
-in a game in Unity. In addition, implementing a simple VR setup such as showing
-the player in game would be a helpful assignment to have and keep everyone at
-the same phase and prevent them from being discourage to develop in Unity as I
-certainly found it overwhelming at first if I had not known anything about Unity
-or Blender experience.\par 
-
-The collaboration groups are pretty helpful as it allowed us to reflect on our
-applications and evulate VR design factors that would help our applications work
-effectively. Thus, collaboration reveal weaknesses and strengths in our
-applications.  
-\newpage
-
 \section{Classmates' VR App Evaluation}
+
+    
+
 \end{document}

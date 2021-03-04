@@ -1,9 +1,17 @@
-\contentsline {section}{\numberline {1}VR Application Design}{2}{}%
-\contentsline {section}{\numberline {2}Introduction}{5}{}%
-\contentsline {section}{\numberline {3}User Experience}{5}{}%
-\contentsline {section}{\numberline {4}User Guidline}{5}{}%
-\contentsline {section}{\numberline {5}Conclusion}{5}{}%
-\contentsline {section}{\numberline {6}Suggestions for Further Improvements}{5}{}%
-\contentsline {section}{\numberline {A}Lessons Learned}{5}{}%
-\contentsline {section}{\numberline {B}Feedback to the Instructor}{5}{}%
-\contentsline {section}{\numberline {C}Classmates' VR App Evaluation}{5}{}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}VR Application Design}{3}{section.2}%
+\contentsline {section}{\numberline {3}Integration}{3}{section.3}%
+\contentsline {section}{\numberline {4}User Experience}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Navigation}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Guiding Audio/Sound Effects}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Text Instructional}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Instructional Signs/Wayfinders}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Six Degrees of Freedom}{6}{subsection.4.5}%
+\contentsline {section}{\numberline {5}User Guideline}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Windows Installation}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Android Installation}{6}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}%
+\contentsline {section}{\numberline {7}Suggestions for Further Improvements}{7}{section.7}%
+\contentsline {section}{\numberline {A}Lessons Learned}{8}{appendix.A}%
+\contentsline {section}{\numberline {B}Feedback to the Instructor}{9}{appendix.B}%
+\contentsline {section}{\numberline {C}Classmates' VR App Evaluation}{10}{appendix.C}%
