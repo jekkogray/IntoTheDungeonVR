@@ -4,7 +4,7 @@
 
 ## About
 
-Into the dungeon is a dungeon monster slaying game. The objective of the game is to explore each room in the dungeon and slay the monsters that are present. Each level contain different types of guns, and varying enemies.
+Into the dungeon is a dungeon monster slaying game! Get ready I swear you might get too scared however! But fear not, fear not I say. You have pretty much all the health in the world. If you die in the game, I don't know what to say. The objective of the game is to explore each room in the dungeon and slay the monsters that are present. Each level contain different types of guns, and varying enemies.
 
 ## Builds:
 [Android/Quest Build](https://drive.google.com/file/d/1LrKn4UaD033swWq1jGlmm7kVkU7SuHzz/view?usp=sharing)
