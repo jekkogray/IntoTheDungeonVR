@@ -15,3 +15,7 @@
 \contentsline {section}{\numberline {A}Lessons Learned}{8}{appendix.A}%
 \contentsline {section}{\numberline {B}Feedback to the Instructor}{9}{appendix.B}%
 \contentsline {section}{\numberline {C}Classmates' VR App Evaluation}{10}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Arjun Vijay- Golf Mania}{10}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Mike - VR Fishing}{10}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Jonathan - VRcade(Incompatible)}{10}{subsection.C.3}%
+\contentsline {subsection}{\numberline {C.4}Giana Fiore - Golf Mania(Alternate)}{11}{subsection.C.4}%

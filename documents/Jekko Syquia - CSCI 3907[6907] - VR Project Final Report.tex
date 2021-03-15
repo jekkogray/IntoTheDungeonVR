@@ -1,5 +1,5 @@
 \documentclass[12pt, twoside]{article}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=0mm]{geometry}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{gensymb}
 \usepackage{fancyhdr}
@@ -7,13 +7,16 @@
 \fancyhead[RO,LE]{Into The Dungeon}
 \usepackage{setspace}
 \usepackage{listings}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=black,      
-    urlcolor=black,
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, filecolor=black,      
+    urlcolor=black,}
 
 \pagestyle{fancy}
 \doublespace
@@ -31,25 +34,26 @@
 
 \section{Introduction}
 
-\emph{Into the dungeon} is a dungeon monster slayer VR game targeted at the
-Oculus Quest device that is tethered a PC machine. The objective of the game is
-to go through each level and try to slay all the monsters present in each level
-of the game. Each level introduces new weapons, and with each new level the user
-is introduced to new enemies. New enemies deal harder damage as the game
+\emph{Into the dungeon} is a dungeon monster slayer VR game targeted for the
+Oculus Quest device tethered on PC. The objective of the game is to go through
+each level and try to slay all the monsters present in each level of the game.
+Each level introduces new weapons, and with each new level the user is
+introduced to new enemies. New enemies deal harder damage as the game
 progresses. Each enemy AI is able to target the user and will shoot projectiles
 at the user when the user is at a closer range to the player. Every enemy also
 has their own score value that increases the users total score in the game. \par
 
-This game main objective is to allow the users to experience streamlined games like
-\emph{Doom} and other first-person shooter games in VR, thus enabling a tensed
-gaming experience. Unlike other streamlined VR games however, the user has a
-longer health bar than usual to allow the user to play at a more relaxed phased
-in the game. If the user dies, the user is respawned at the starting position of
-that level and the enemies are respawned. Users can also expect to keep a score
-count in the game to show off their friends. It is also important to notice that
-this game does not require the user to finish each level as they have the option
-of skipping to the next level if they would like. Therefore, it is a "finish your
-game at your own phase" and the score is dependent on the play time of the user.
+This game main objective is to allow the users to experience streamlined games
+like \emph{Doom} and other first-person shooter games in VR, thus enabling a
+tensed gaming experience. Unlike other streamlined VR games however, the user
+has a longer health bar than usual to allow the user to play at a more relaxed
+phased in the game. If the user dies, the user is respawned at the starting
+position of that level and the enemies are respawned. Users can also expect to
+keep a score count in the game to show off their friends. It is also important
+to notice that this game does not require the user to finish each level as they
+have the option of skipping to the next level if they would like. Therefore, it
+is a "finish your game at your own phase" and the score is dependent on the play
+time of the user.
 \newpage
 
 \section{VR Application Design}
@@ -72,61 +76,68 @@ Gameplay wise, users have infinite amount of ammo, this decision was taken into
 account to prevent users from needing to reload and prevents added complexity of
 loading their weapons which would make this game less arcade feeling.\par
 
-The map design simplicity was also reduced greatly. Instead of moving around the
-map so much, the level was simplified to prevent users from getting lost in the
-game.
+The map design simplicity was also reduced a significant amount. Instead of
+moving around the map so much, the level was simplified to prevent users from
+getting lost in the game.
+
 \section{Integration}
-For the build-process, I primarily worked with C\# Unity and Blender as the tool
-for modeling my enemies and level design. The weapons in the game was provided
-through the asset store in Unity.\par 
+For the build-process, this project was written entriely in C\# Unity and
+Blender was the tool for modeling my enemies and level design. The weapons in
+the game was provided through the asset store in Unity.\par 
 
 The tool mainly used for handling VR interaction in the game was the inclusion
-of \emph{XR Interaction Toolkit} through the package manager. This tool provided
-the tools necessary to handling the VR device. For example, interaction with
-objects in the game and player in game setup was handled by this tool. Mechanics
-such as hand presence still had to be scripted and written individually. \par
+of
+\emph{\href{https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@0.9/manual/index.html}{XR
+Interaction Toolkit}} through the package manager. This tool provided the tools
+necessary for handling any VR device. For example, interaction with objects in
+the game and player in game setup was handled by this tool. Mechanics such as
+hand presence still had to be scripted and written individually, but it provided
+a great framework for utilizing the device features such as the haptic feedback
+for the weapons. \par
 
-Models in the game was built using Blender. This allowed for custom map models
-in the game and designing custom enemies not found in the asset store. The
-creation and baking of textures was also handled through Blender.  In turn these
-were imported through Unity as an asset in which each enemy object has an enemy
-script attached to them to handle their behavior.
+Models in the game was built using Blender and exported as \emph{.fbx} files
+into Unity. This allowed for custom map models in the game and designing custom
+enemies not found in the asset store. The creation and baking of textures was
+also handled through Blender. Once imported in Unity as an asset an enemy script
+is attached to handle their behavior.
 
 \section{User Experience}
 \emph{Into the Dungeon} has many design considerations to allow for a relaxed
 user experience. In this section we talk about the design decisions that make
 this game much more enjoyable. It is important to note that the game was meant
 to replicate arcade games like \emph{Doom} as mentioned earlier. However the
-game is also meant as a way for users to physically more intense, but each level
-is not required be completed as the user can skip through each level as they
-would like.
+game is also meant as a way for users to be physically active, but each level is
+not required be completed as the user can skip through each level as they would
+like.
+
 \subsection{Navigation}
 Users can expect to move in the game via teleportation, controller or physical
 movement. Since the game utilizes \emph{Six degrees of Freedom (DOF)} users are
 not limited to teleportation. Teleportation is introduced in the game to
-mitigate the unconformability when moving with a joystick in the game.
-Furthermore, if the user has the space perhaps a large room, the users can use
-their physical space. While the games utilizes all three, they are not
-restricted to one and can choose any option as they which.\par 
+mitigate the unconformability when moving with a joystick. Furthermore, if the
+user has the space like a large room, the users can use their physical space in
+the game. While the games utilizes all three, they are not restricted to one and
+can choose any option as they wish.\par 
 
 To ease the movement even further, the user has the option for \emph{Snap
 Rotation} functionality. Snap Rotation allows users to flick the right analog
-stick left or right to a fixed degree of 45\textdegree.\par
+stick left or right to a fixed degree of 45\textdegree. This prevents the need
+to rotate physically and addresses concerns with wire management when connected
+to a computer.\par
 
 An important design decision when it comes to moving from one level to another
-was the exclusion of doors. To make the game even easier to move around, I
-allowed users to navigate to each level using the UI. This prevents the need to
-interact with doors to go to the next level of the game.
-
-
+was the exclusion of doors. To make the game even easier to move around, users
+can navigate to each level using the UI present at beginning every of every
+level. This prevents the need to interact with doors to go to the next level of
+the game.
 
 \subsection{Guiding Audio/Sound Effects}
 Every weapon and enemy interaction is present in the game. For example, the
-handgun has handgun sound effects for firing to indicate it is firing.
-Additionally, once the shot has been fired sound effects will be present in the
-location of the collision. Therefore, there is a sense of 3D spatial sound in the
-game. Once the enemy is defeated the game also lets the user know the enemy is
-dead by indicating an explosion sound depending on the enemy. \par
+handgun has handgun sound effects for firing. Additionally, once the shot has
+been fired sound effects will be present in the location of the bullet.
+Therefore, there is a sense of 3D spatial sound in the game. Once the enemy is
+defeated the game also lets the user know the enemy is dead by indicating an
+explosion sound depending on the enemy. \par
 
 Enemies in the game have their own individual sound as well. Each sound source
 will be relative to the location of the player. By doing this, we can have
@@ -180,15 +191,18 @@ On their device, users can then navigate to the app library and go to unknown
 sources to play use the application. The game will proceed to placing you in a
 tutorial setting where you can view the controls. For best experience use the
 teleportation (left trigger)
+
 \section{Conclusion}
-Considering the initial design works what work was the room to room dynamics of
-the game. However, the physical movement from one room to another was removed to
+Considering the initial design what works is the room to room dynamics of
+the game. The physical movement from one room to another was removed to
 prevent the user from getting lost. However, I do believe implementing UI
-room navigation was a lot more effective that indoors. However, what did not work
+room navigation was a lot more effective. What did not work
 was implementing swords and such as since it was a lot more complicated to
-implement physical damage through user collisions. What does need work is the
-level design, as I focused more on reducing unnecessary movements this also
-dumb down the levels in the game.
+implement physical damage through user collisions since I need to take account
+for constant collision. movement. What does need work is the
+level design, as I focused more on reducing unnecessary movements this also over
+simplified the level design in the game.\par
+
 \section{Suggestions for Further Improvements}
 To improve the game even more, perhaps the introduction of more complicated map
 designs could make the game more engaging and increase the repeatability factor
@@ -196,7 +210,9 @@ of the game. Also including more weapons in the game can increase th
 as well as being able to carry multiple weapons can be helpful for the user. To
 enhance the experience it would be helpful to optimize the models even further
 to be compatible with the Oculus Quest unlinked. This application runs smoothly
-connected to a PC.
+connected to a PC. The game has no proper ending aside from defeating the big
+boss in the game, this decision was made in part with relaxed gameplay with the
+game.\par
 \newpage
 \appendix
 \section{Lessons Learned}
@@ -226,12 +242,18 @@ would keep decreasing my health when a projectile collided with the player
 especially if the projectile had a slower velocity. This was the main reason I
 excluded using swords in the game as I did not know when the damage should keep
 inflicting or when an enemy actually attack the enemy opposed to having the
-sword just touching the enemy.\par
+sword just touching the enemy. I have also added collision cues by adding
+particle effects when the bullet collides with an enemy.\par
 
 User movement was a struggle however, when I found out about \emph{XR
 Interaction Toolkit} the implementation was simplified. Once the rig was setup
 it was primarily implementing the behavior of weapon objects and applying
 scripts to them that correspond to user button press such as the shoot button. 
+
+Beyond the project I have also implented particle effects when the enemy is hit.
+This was beyond the requirements of the game, and including AI Enemies that
+shoot back was also beyond the requirements. Building the models myself was also
+beyond the requirements of the game, as I aimed to make the game more varied.
 
 \section{Feedback to the Instructor}
 For the VR Dev platform, it was very helpful to use Unity with C\# as the
@@ -245,11 +267,52 @@ the same phase and prevent them from being discourage to develop in Unity as I
 certainly found it overwhelming at first if I had not known anything about Unity
 or Blender experience.\par 
 
-The collaboration groups are pretty helpful as it allowed us to reflect on our
+The collaboration groups are helpful as it allowed us to reflect on our
 applications and evulate VR design factors that would help our applications work
 effectively. Thus, collaboration reveal weaknesses and strengths in our
 applications.  
 \newpage
 
 \section{Classmates' VR App Evaluation}
+\subsection{Arjun Vijay- Golf Mania}
+Testing the game I was able to move around smoothly. However, one of the
+problems I was having in the game was the lack of tutorial, therefore I was not
+aware on how grab an object. The game was, however, very disorienting and the
+camera moved everytime the user teleports to a location therefore override the
+camera orientation. \subsection{Mike - VR Fishing}
+The motion in the game and frame rate was running smoothly. The user had full
+control of the device in 6 degrees of freedom. Screen space reflection problem
+\par
+
+One of the main issues present in the game however is the addition of screen
+space reflection with the water. Since the reflection reflect different per eye,
+it tends to cause the user to be a little bit cross eyed. However, in terms of
+performance the application runs well.
+\par
+
+There are no present accelerations in the game which make the game enjoyable as
+I did not feel any discomfort. There are no effects that causes the user to lose
+control of the player. \par
+
+A snapping feature would be helpful and adding different fishes in the game would be helpful.
+
+\subsection{Jonathan - VRcade(Incompatible)}
+I was not able to test the game due to the following error: 
+\begin{lstlisting}{language=CMD}
+    adb: failed to install C:\Users\Jekko\Downloads\VR Final Demo Group
+    Games\VRcade_game.apk: Failure [INSTALL_FAILED_OLDER_SDK: Failed parse
+    during installPackageLI: /data/app/vmdl1887246848.tmp/base.apk (at Binary
+    XML file line #9): Requires newer sdk version #29 (current version is #25)]
+\end{lstlisting}
+But looking at the most important factors in succesful VR applcication design 
+However, looking at the video I can see the incl
+
+\subsection{Giana Fiore - Golf Mania(Alternate)}
+It was enjoyable to play this game however, the lack of tutorial had me figuring
+out how to teleport/move for a good 30 seconds. But the game was made
+beautifully and that addition of sound effects such as background music and item
+placement made the game more engaging. I do like that there are different
+environments and the user had full control of the game the whol time. There are
+no accelerations present in the game and frame rate was running smoothly.
+
 \end{document}
