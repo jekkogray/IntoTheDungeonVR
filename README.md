@@ -1,4 +1,6 @@
-# Project 1 (VR): Into the dungeon
+# Into the Dungeon VR
+Jekko Syquia 
+
 ## Builds:
 [Android/Quest Build](https://drive.google.com/file/d/1LrKn4UaD033swWq1jGlmm7kVkU7SuHzz/view?usp=sharing)
 
