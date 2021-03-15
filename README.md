@@ -1,6 +1,9 @@
 # Into the Dungeon VR
+
+<b>Jekko Syquia</b>
+
 ## About
-Jekko Syquia
+
 Into the dungeon is a dungeon monster slaying game. The objective of the game is to explore each room in the dungeon and slay the monsters that are present. Each level contain different types of guns.
 
 ## Builds:
